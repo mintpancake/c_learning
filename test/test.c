@@ -1,18 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    int  var = 20;   /* 实际变量的声明 */
-   int  *ip;        /* 指针变量的声明 */
- 
-   ip = &var;  /* 在指针变量中存储 var 的地址 */
- 
-   printf("Address of var variable: %p\n", &var  );
- 
-   /* 在指针变量中存储的地址 */
-   printf("Address stored in ip variable: %p\n", ip );
- 
-   /* 使用指针访问值 */
-   printf("Value of *ip variable: %d\n", *ip );
- 
-   return 0;
+    int previousDegree = 0;
+    int changedDegree = 0;
+    for(; ; ){
+        printf("The cuurent angle is %d. \nEnter the angle you want to change: ", previousDegree);
+        if(scanf("%d", &changedDegree) != 1) break;
+        previousDegree = deg(changedDegree, previousDegree);
+    }
+    printf("The final angle is %d. \nCompleted. ", previousDegree);
+    return 0;
+}
+
+int deg(int changedDegree, int previousDegree){
+    int pointingDgree = 0;
+    pointingDgree = (previousDegree + changedDegree) % 360;
+    if(pointingDgree < 0){
+        pointingDgree += 360;
+    }
+    if(pointingDgree > 180){
+        pointingDgree -= 360;
+    }
+    return pointingDgree;
 }
