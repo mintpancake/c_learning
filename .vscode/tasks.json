@@ -5,6 +5,8 @@
             "command": "gcc",
             "args": [
                 "-g",
+                "-pedantic-errors",
+                "-std=c11",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe"
