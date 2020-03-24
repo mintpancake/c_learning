@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    char s[] = "hello world";
-    printf("%s\n", s);
+    char s[] = "aaa";
+    printf("%d\n", strlen(s));
     return 0;
 }
